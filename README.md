@@ -40,19 +40,5 @@ CREATE TABLE historial_favorites (
     FOREIGN KEY (customer_id) REFERENCES favorites(customer_id),
     FOREIGN KEY (company_id) REFERENCES favorites(company_id)
 )ENGINE=InnoDB;
-
-CREATE TABLE historial_rates (
-    id INT(11) PRIMARY KEY AUTO_INCREMENT,
-    customer_id INT(11),
-    company_id VARCHAR(20),
-    poll_id INT(11),
-    daterating DATETIME,
-    rating DOUBLE(10,2),
-    FOREIGN KEY (customer_id) REFERENCES rates(customer_id),
-    FOREIGN KEY (company_id) REFERENCES rates(company_id),
-    FOREIGN KEY (poll_id) REFERENCES rates(poll_id),
-    FOREIGN KEY (daterating) REFERENCES rates(daterating),
-    FOREIGN KEY (rating) REFERENCES rates(rating)
-)ENGINE=InnoDB;
 ```
 
