@@ -746,3 +746,186 @@ VALUES
 ('LA PRIMAVERA', 'CO-VID'),
 ('SANTA ROSALIA', 'CO-VID'),
 ('CUMARIBO', 'CO-VID');
+
+INSERT INTO typesofidentifications (description, suffix) VALUES
+('Cédula de Ciudadanía','CC'),
+('NIT','NIT'),
+('Cédula de Extranjería','CE'),
+('Pasaporte','PAS'),
+('Tarjeta de Identidad','TI'),
+('Registro Civil','RC'),
+('Permiso Especial','PEP'),
+('NUIP','NUIP'),
+('Documento Nacional de Identidad','DNI'),
+('Carné Diplomático','CD');
+
+INSERT INTO unitofmeasure (id, description) VALUES
+(1,'Unidad'), (2,'Kilogramo'), (3,'Gramo'), (4,'Litro'), (5,'Mililitro'),
+(6,'Metro'), (7,'Centímetro'), (8,'Pulgada'), (9,'Paquete'), (10,'Caja');
+
+INSERT INTO categories (description) VALUES
+('Alimentos'), ('Bebidas'), ('Electrónicos'), ('Ropa'), ('Hogar'),
+('Salud'), ('Belleza'), ('Deportes'), ('Automotriz'), ('Mascotas');
+
+INSERT INTO audiences (description) VALUES
+('Adultos'), ('Niños'), ('Adolescentes'), ('Empresas'), ('Ancianos'),
+('Universitarios'), ('Profesionales'), ('Deportistas'), ('Viajeros'), ('Amantes de mascotas');
+
+INSERT INTO memberships (name, description) VALUES
+('Bronce','Acceso básico a la plataforma'),
+('Plata','Funciones adicionales y soporte estándar'),
+('Oro','Prioridad en soporte y promociones especiales'),
+('Platino','Beneficios premium y acceso exclusivo'),
+('Diamante','Asesoría personalizada + beneficios Platino'),
+('Startup','Plan especial para emprendedores'),
+('Pyme','Optimizado para pequeñas y medianas empresas'),
+('Corporativo','Para grandes organizaciones multiusuario'),
+('Estudiantil','Tarifa reducida para estudiantes'),
+('Vitalicio','Membresía de por vida');
+
+INSERT INTO periods (name) VALUES
+('Mensual'), ('Bimestral'), ('Trimestral'), ('Semestral'), ('Anual'),
+('Bienal'), ('Trienal'), ('Cuatrienal'), ('Quinquenal'), ('Decenal');
+
+INSERT INTO benefits (description, detail) VALUES
+('Envío gratis','Cobertura nacional sin costo en envíos'),
+('Descuento 10%','Aplicable a productos seleccionados'),
+('Acceso VIP','Entrada preferencial a eventos'),
+('Soporte 24/7','Atención al cliente todo el día'),
+('Contenido exclusivo','Artículos y vídeos solo para miembros'),
+('Regalos de temporada','Obsequios en fechas especiales'),
+('Cashback 5%','Devolución en compras'),
+('Garantía extendida','Cobertura de un año adicional'),
+('Sorteos','Participación en sorteos mensuales'),
+('Capacitación en línea','Cursos y webinars sin costo');
+
+INSERT INTO categories_polls (name) VALUES
+('Satisfacción del Cliente'), ('Calidad del Producto'), ('Servicio al Cliente'),
+('Experiencia de Compra'), ('Entrega'), ('Precio'), ('Variedad'),
+('Facilidad de Uso'), ('Recomendación'), ('Programa de Fidelidad');
+
+INSERT INTO companies (id, type_id, name, category_id, city_id, audience_id, cellphone, email) VALUES
+('NIT900001001',2,'Super Alimentos S.A.',1,1,1,'3001110001','info@superalimentos.com'),
+('NIT900001002',2,'Bebidas del Valle Ltda.',2,2,4,'3001110002','contacto@bebidasvalle.com'),
+('NIT900001003',2,'ElectroWorld SAS',3,3,7,'3001110003','ventas@electroworld.com'),
+('NIT900001004',2,'Moda Joven SA',4,4,3,'3001110004','hola@modajoven.com'),
+('NIT900001005',2,'Hogar Feliz S.A.S.',5,5,1,'3001110005','servicio@hogarfeliz.com'),
+('NIT900001006',2,'Salud Total IPS',6,6,5,'3001110006','info@saludtotal.com'),
+('NIT900001007',2,'Belleza Integral Ltda.',7,7,7,'3001110007','contacto@bellezaintegral.com'),
+('NIT900001008',2,'SportLife SAS',8,8,8,'3001110008','ventas@sportlife.com'),
+('NIT900001009',2,'AutoPartes Colombia',9,9,9,'3001110009','soporte@autopartes.co'),
+('NIT900001010',2,'Mascotas Felices S.A.',10,10,10,'3001110010','info@mascotasfelices.com');
+
+INSERT INTO customers (name, city_id, audience_id, cellphone, email, address) VALUES
+('Juan Pérez',1,1,'3101111001','juan.perez@mail.com','Calle 1 #10‑01'),
+('María Rodríguez',2,2,'3101111002','maria.rod@mail.com','Carrera 2 #20‑02'),
+('Carlos Gómez',3,3,'3101111003','carlos.gomez@mail.com','Av. 3 #30‑03'),
+('Laura Martínez',4,4,'3101111004','laura.martinez@mail.com','Calle 4 #40‑04'),
+('Andrés Sánchez',5,5,'3101111005','andres.sanchez@mail.com','Carrera 5 #50‑05'),
+('Carolina Díaz',6,6,'3101111006','carolina.diaz@mail.com','Av. 6 #60‑06'),
+('Felipe Torres',7,7,'3101111007','felipe.torres@mail.com','Calle 7 #70‑07'),
+('Valentina Ruiz',8,8,'3101111008','valentina.ruiz@mail.com','Carrera 8 #80‑08'),
+('Ricardo López',9,9,'3101111009','ricardo.lopez@mail.com','Av. 9 #90‑09'),
+('Natalia Castro',10,10,'3101111010','natalia.castro@mail.com','Calle 10 #100‑10');
+
+INSERT INTO products (name, detail, price, category_id, image) VALUES
+('Galletas de Chocolate','Paquete de 12 galletas',4.50,1,'galletas.jpg'),
+('Jugo Natural Naranja','Botella 500ml',3.00,2,'jugo_naranja.jpg'),
+('Auriculares Bluetooth','Alcance 10m, cancelación de ruido',45.99,3,'auriculares.jpg'),
+('Camiseta Algodón','Talla M, color azul',15.50,4,'camiseta.jpg'),
+('Juego de Sábanas','Algodón 300 hilos, queen',55.00,5,'sabanas.jpg'),
+('Vitaminas Complejo B','Frasco 60 tabletas',12.75,6,'vitaminas.jpg'),
+('Crema Hidratante','Con aloe vera 200ml',8.90,7,'crema.jpg'),
+('Balón de Fútbol','Tamaño 5, material sintético',18.20,8,'balon.jpg'),
+('Filtro de Aceite','Compatibilidad universal',9.99,9,'filtro_aceite.jpg'),
+('Alimento para Perros','Saco 10kg sabor pollo',25.30,10,'alimento_perros.jpg');
+
+
+INSERT INTO membershipperiods (membership_id, period_id, price) VALUES
+(1,1,9.99),(2,2,18.99),(3,3,27.99),(4,4,49.99),(5,5,89.99),
+(6,6,99.99),(7,7,129.99),(8,8,199.99),(9,9,4.99),(10,10,499.99);
+
+INSERT INTO membershipbenefits (membership_id, period_id, audience_id, benefit_id) VALUES
+(1,1,1,1),(2,2,2,2),(3,3,3,3),(4,4,4,4),(5,5,5,5),
+(6,6,6,6),(7,7,7,7),(8,8,8,8),(9,9,9,9),(10,10,10,10);
+
+INSERT INTO audiencebenefits (audience_id, benefit_id) VALUES
+(1,1),(2,2),(3,3),(4,4),(5,5),
+(6,6),(7,7),(8,8),(9,9),(10,10);
+
+INSERT INTO companyproducts (company_id, product_id, price, unitmeasure_id) VALUES
+('NIT900001001',1,4.50,1), ('NIT900001002',2,3.00,4), ('NIT900001003',3,45.99,1),
+('NIT900001004',4,15.50,1), ('NIT900001005',5,55.00,9), ('NIT900001006',6,12.75,1),
+('NIT900001007',7,8.90,5), ('NIT900001008',8,18.20,1), ('NIT900001009',9,9.99,1),
+('NIT900001010',10,25.30,10);
+
+INSERT INTO favorites (customer_id, company_id) VALUES
+(1,'NIT900001001'),(2,'NIT900001002'),(3,'NIT900001003'),(4,'NIT900001004'),(5,'NIT900001005'),
+(6,'NIT900001006'),(7,'NIT900001007'),(8,'NIT900001008'),(9,'NIT900001009'),(10,'NIT900001010');
+
+INSERT INTO details_favorites (id, favorite_id, product_id) VALUES
+(1,1,1),(2,2,2),(3,3,3),(4,4,4),(5,5,5),
+(6,6,6),(7,7,7),(8,8,8),(9,9,9),(10,10,10);
+
+INSERT INTO polls (name, description, isactive, categorypoll_id) VALUES
+('Encuesta Satisfacción 1','Mide satisfacción general',1,1),
+('Encuesta Calidad 2','Evalúa calidad de producto',1,2),
+('Encuesta Servicio 3','Califica servicio al cliente',1,3),
+('Encuesta Experiencia 4','Evalúa experiencia de compra',1,4),
+('Encuesta Entrega 5','Tiempo y condiciones de entrega',1,5),
+('Encuesta Precio 6','Percepción del precio',1,6),
+('Encuesta Variedad 7','Variedad del catálogo',1,7),
+('Encuesta Facilidad 8','Facilidad de uso de la app',1,8),
+('Encuesta Recomendación 9','Probabilidad de recomendación',1,9),
+('Encuesta Fidelidad 10','Programa de fidelidad',1,10);
+
+INSERT INTO quality_products (product_id, customer_id, poll_id, company_id, daterating, rating) VALUES
+(1,1,1,'NIT900001001','2025-07-10 10:00:00',4.5),
+(2,2,2,'NIT900001002','2025-07-10 10:05:00',4.0),
+(3,3,3,'NIT900001003','2025-07-10 10:10:00',4.8),
+(4,4,4,'NIT900001004','2025-07-10 10:15:00',4.2),
+(5,5,5,'NIT900001005','2025-07-10 10:20:00',4.6),
+(6,6,6,'NIT900001006','2025-07-10 10:25:00',4.3),
+(7,7,7,'NIT900001007','2025-07-10 10:30:00',4.7),
+(8,8,8,'NIT900001008','2025-07-10 10:35:00',4.4),
+(9,9,9,'NIT900001009','2025-07-10 10:40:00',4.1),
+(10,10,10,'NIT900001010','2025-07-10 10:45:00',4.9);
+
+INSERT INTO rates (customer_id, company_id, poll_id, daterating, rating) VALUES
+(1,'NIT900001001',1,'2025-07-11 09:00:00',4.5),
+(2,'NIT900001002',2,'2025-07-11 09:05:00',4.0),
+(3,'NIT900001003',3,'2025-07-11 09:10:00',4.8),
+(4,'NIT900001004',4,'2025-07-11 09:15:00',4.2),
+(5,'NIT900001005',5,'2025-07-11 09:20:00',4.6),
+(6,'NIT900001006',6,'2025-07-11 09:25:00',4.3),
+(7,'NIT900001007',7,'2025-07-11 09:30:00',4.7),
+(8,'NIT900001008',8,'2025-07-11 09:35:00',4.4),
+(9,'NIT900001009',9,'2025-07-11 09:40:00',4.1),
+(10,'NIT900001010',10,'2025-07-11 09:45:00',4.9);
+
+INSERT INTO customer_memberships (customer_id, membership_id, start_date, end_date, isactive) VALUES
+(1,1,'2025-01-01','2025-12-31',1),(2,2,'2025-01-01','2025-12-31',1),
+(3,3,'2025-01-01','2025-12-31',1),(4,4,'2025-01-01','2025-12-31',1),
+(5,5,'2025-01-01','2025-12-31',1),(6,6,'2025-01-01','2025-12-31',1),
+(7,7,'2025-01-01','2025-12-31',1),(8,8,'2025-01-01','2025-12-31',1),
+(9,9,'2025-01-01','2025-12-31',1),(10,10,'2025-01-01','2025-12-31',1);
+
+INSERT INTO resumen_calificaciones (empresa_id, mes, año, promedio_calificacion, total_calificaciones, fecha_generacion) VALUES
+('NIT900001001',6,2025,4.5,120,'2025-07-16 22:00:00'),
+('NIT900001002',6,2025,4.0,98,'2025-07-16 22:00:00'),
+('NIT900001003',6,2025,4.8,145,'2025-07-16 22:00:00'),
+('NIT900001004',6,2025,4.2,102,'2025-07-16 22:00:00'),
+('NIT900001005',6,2025,4.6,110,'2025-07-16 22:00:00'),
+('NIT900001006',6,2025,4.3,99,'2025-07-16 22:00:00'),
+('NIT900001007',6,2025,4.7,130,'2025-07-16 22:00:00'),
+('NIT900001008',6,2025,4.4,115,'2025-07-16 22:00:00'),
+('NIT900001009',6,2025,4.1,90,'2025-07-16 22:00:00'),
+('NIT900001010',6,2025,4.9,150,'2025-07-16 22:00:00');
+
+INSERT INTO historial_favorites (customer_id, company_id, fecha_improve) VALUES
+(1,'NIT900001001','2025-07-16 22:10:00'), (2,'NIT900001002','2025-07-16 22:11:00'),
+(3,'NIT900001003','2025-07-16 22:12:00'), (4,'NIT900001004','2025-07-16 22:13:00'),
+(5,'NIT900001005','2025-07-16 22:14:00'), (6,'NIT900001006','2025-07-16 22:15:00'),
+(7,'NIT900001007','2025-07-16 22:16:00'), (8,'NIT900001008','2025-07-16 22:17:00'),
+(9,'NIT900001009','2025-07-16 22:18:00'), (10,'NIT900001010','2025-07-16 22:19:00');
+
