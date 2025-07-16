@@ -231,3 +231,6 @@ CREATE TABLE historial_favorites (
     FOREIGN KEY (customer_id) REFERENCES favorites(customer_id),
     FOREIGN KEY (company_id) REFERENCES favorites(company_id)
 )ENGINE=InnoDB;
+
+ALTER TABLE products 
+ADD COLUMN updated_at DATETIME;
