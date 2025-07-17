@@ -234,3 +234,13 @@ CREATE TABLE historial_favorites (
 
 ALTER TABLE products 
 ADD COLUMN updated_at DATETIME;
+
+DROP TABLE IF EXISTS historial_favorites;
+
+CREATE TABLE historial_favorites (
+    id INT(11) PRIMARY KEY AUTO_INCREMENT,
+    favorite_id INT(11),
+    accion VARCHAR(20), -- 'añadir' o 'eliminar'
+    fecha_improve TIMESTAMP,
+    FOREIGN KEY (favorite_id) REFERENCES favorites(id)
+) ENGINE=InnoDB;

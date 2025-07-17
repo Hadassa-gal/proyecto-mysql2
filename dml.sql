@@ -922,10 +922,49 @@ INSERT INTO resumen_calificaciones (empresa_id, mes, año, promedio_calificacion
 ('NIT900001009',6,2025,4.1,90,'2025-07-16 22:00:00'),
 ('NIT900001010',6,2025,4.9,150,'2025-07-16 22:00:00');
 
-INSERT INTO historial_favorites (customer_id, company_id, fecha_improve) VALUES
-(1,'NIT900001001','2025-07-16 22:10:00'), (2,'NIT900001002','2025-07-16 22:11:00'),
-(3,'NIT900001003','2025-07-16 22:12:00'), (4,'NIT900001004','2025-07-16 22:13:00'),
-(5,'NIT900001005','2025-07-16 22:14:00'), (6,'NIT900001006','2025-07-16 22:15:00'),
-(7,'NIT900001007','2025-07-16 22:16:00'), (8,'NIT900001008','2025-07-16 22:17:00'),
-(9,'NIT900001009','2025-07-16 22:18:00'), (10,'NIT900001010','2025-07-16 22:19:00');
+UPDATE quality_products SET rating = 3.2 WHERE product_id = 2 AND customer_id = 2;
+UPDATE quality_products SET rating = 2.8 WHERE product_id = 6 AND customer_id = 6;
+UPDATE quality_products SET rating = 3.5 WHERE product_id = 9 AND customer_id = 9;
 
+INSERT INTO quality_products (product_id, customer_id, poll_id, company_id, daterating, rating) VALUES
+(1, 2, 1, 'NIT900001001', '2025-07-12 11:00:00', 2.5),
+(3, 5, 3, 'NIT900001003', '2025-07-12 11:15:00', 3.0),
+(5, 7, 5, 'NIT900001005', '2025-07-12 11:30:00', 1.8),
+(7, 9, 7, 'NIT900001007', '2025-07-12 11:45:00', 2.2),
+(10, 1, 10, 'NIT900001010', '2025-07-12 12:00:00', 3.7);
+
+UPDATE rates SET rating = 3.2 WHERE company_id = 'NIT900001002' AND customer_id = 2;
+UPDATE rates SET rating = 2.8 WHERE company_id = 'NIT900001006' AND customer_id = 6;
+UPDATE rates SET rating = 3.5 WHERE company_id = 'NIT900001009' AND customer_id = 9;
+
+INSERT INTO rates (customer_id, company_id, poll_id, daterating, rating) VALUES
+(2, 'NIT900001001', 1, '2025-07-12 11:00:00', 2.5),
+(5, 'NIT900001003', 3, '2025-07-12 11:15:00', 3.0),
+(7, 'NIT900001005', 5, '2025-07-12 11:30:00', 1.8),
+(9, 'NIT900001007', 7, '2025-07-12 11:45:00', 2.2),
+(1, 'NIT900001010', 10, '2025-07-12 12:00:00', 3.7);
+
+UPDATE resumen_calificaciones SET promedio_calificacion = 4.1, total_calificaciones = 125
+WHERE empresa_id = 'NIT900001001' AND mes = 6 AND año = 2025;
+
+UPDATE resumen_calificaciones SET promedio_calificacion = 3.6, total_calificaciones = 103
+WHERE empresa_id = 'NIT900001002' AND mes = 6 AND año = 2025;
+
+INSERT INTO historial_favorites (favorite_id, accion, fecha_improve) VALUES
+(1, 'añadir', '2025-07-16 22:10:00'),
+(2, 'añadir', '2025-07-16 22:11:00'),
+(3, 'añadir', '2025-07-16 22:12:00'),
+(4, 'añadir', '2025-07-16 22:13:00'),
+(5, 'añadir', '2025-07-16 22:14:00'),
+(6, 'añadir', '2025-07-16 22:15:00'),
+(7, 'añadir', '2025-07-16 22:16:00'),
+(8, 'añadir', '2025-07-16 22:17:00'),
+(9, 'añadir', '2025-07-16 22:18:00'),
+(10, 'añadir', '2025-07-16 22:19:00');
+
+INSERT INTO historial_favorites (favorite_id, accion, fecha_improve) VALUES
+(1, 'eliminar', '2025-07-17 10:00:00'),
+(3, 'eliminar', '2025-07-17 10:05:00'),
+(5, 'eliminar', '2025-07-17 10:10:00'),
+(7, 'eliminar', '2025-07-17 10:15:00'),
+(9, 'eliminar', '2025-07-17 10:20:00');
