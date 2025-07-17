@@ -125,6 +125,7 @@ CREATE TABLE polls (
 )ENGINE=InnoDB;
 
 CREATE TABLE quality_products (
+    id INT(11) PRIMARY KEY AUTO_INCREMENT,
     product_id INT(11),
     customer_id INT(11),
     poll_id INT(11),
